@@ -8,9 +8,9 @@ const Join = () => {
 
     return (
         <>
-            <h1 className="text-5xl text-center mt-20 mb-10" >Join The Room</h1>
+            <h1 className="text-3xl md:text-5xl  text-center mt-20 mb-10" >Join the Room</h1>
             <div className="grid grid-cols-8">
-                <div className="col-start-4 col-span-2 shadow-md border rounded bg-gray-800 p-5 text-gray-300">
+                <div className="col-start-2 col-span-6 md:col-start-3 md:col-span-4 shadow-md border rounded bg-gray-800 p-5 text-gray-300">
                     <div className="my-1">
                         <label htmlFor="name" className="text-xl">Name:</label>
                         <input 

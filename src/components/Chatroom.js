@@ -59,15 +59,15 @@ const Chatroom = ({location}) => {
         <div className="bg-gray-800 rounded min-h-screen">
             <div className="text-3xl text-center text-gray-200 pt-10">Room: {room}</div>
             <div className="flex">
-                <div className="m-auto my-5 rounded border w-8/12 h-64 overflow-y-scroll">
+                <div className="m-auto my-5 rounded border w-8/12 overflow-y-scroll" style={{height: "450px"}}>
                     <Messages messages={messages} name={name}/>
                 </div>
-                <div className="m-auto my-5 rounded border w-3/12 h-64 overflow-y-scroll">
-                    <div className="text-white text-3xl text-center">Users List:</div>
+                <div className="m-auto my-5 rounded border w-3/12 overflow-y-scroll" style={{height: "450px"}}>
+                    <div className="text-white text-xl md:text-3xl text-center">Users:</div>
                     {
                         users.filter(user => user.name !== name.toLowerCase()).map(user => {
                             return (
-                                <div className="text-white text-xl px-5 py-1" key={user.id}>Userame: {user.name}</div>
+                                <div className="text-white text-xl px-2 py-1" key={user.id}>{user.name}</div>
                             )
                         })
                     }
@@ -76,8 +76,8 @@ const Chatroom = ({location}) => {
             <input 
             type="text"
             value={message}
-            placeholder="Say something"
-            className="w-7/12 block m-auto rounded  py-2 px-3 bg-gray-900 text-white text-xl"
+            placeholder="Say something..."
+            className="w-full md:w-7/12 block m-auto rounded  py-2 px-3 bg-gray-900 text-white text-xl"
             onChange={(e) => setMessage(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' ? sendMessage() : null}
             />
